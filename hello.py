@@ -15,9 +15,14 @@ con = mdb.connect(host="localhost",user="root",
 def mysql():
     ingredientList = []
     cur = con.cursor()
-    cur.execute("SELECT * FROM Ingredients")
+    # Bättre idé att endast frontend sortera detta? Blir antagligen långsammare
+    cur.execute("SELECT ingredients.ingredientName, recipes.recipeName FROM ingredients " +
+                "INNER JOIN ingredientsinrecipe ON ingredients.ingredientID = ingredientsinrecipe.ingredientsID " +
+                "INNER JOIN recipes ON ingredientsinrecipe.recipeID = recipes.recipeID "+
+                "WHERE ingredients.ingredientName ='Egg' OR ingredients.ingredientName ='Chicken' " +
+                "ORDER BY recipes.recipeName")
     rows = cur.fetchall()
-
+    # OR ingredients.ingredientName =" " String which we will add for each item in the json list we receive
     for row in rows:
         ingre = Ingredient(row[0], row[1])
         ingredientList.append(ingre)

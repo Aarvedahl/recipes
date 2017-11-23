@@ -11,18 +11,22 @@ app = Flask(__name__)
 con = mdb.connect(host="localhost",user="root",
                   passwd="password",db="food")
 
-@app.route("/mysql")
+@app.route("/mysql", methods=['GET', 'POST'])
 def mysql():
+    request_json = request.get_json()
     ingredientList = []
     cur = con.cursor()
-    # Bättre idé att endast frontend sortera detta? Blir antagligen långsammare
-    cur.execute("SELECT ingredients.ingredientName, recipes.recipeName FROM ingredients " +
-                "INNER JOIN ingredientsinrecipe ON ingredients.ingredientID = ingredientsinrecipe.ingredientsID " +
-                "INNER JOIN recipes ON ingredientsinrecipe.recipeID = recipes.recipeID "+
-                "WHERE ingredients.ingredientName ='Egg' OR ingredients.ingredientName ='Chicken' " +
-                "ORDER BY recipes.recipeName")
+    dbquery=("SELECT ingredients.ingredientName, recipes.recipeName FROM ingredients " +
+               "INNER JOIN ingredientsinrecipe ON ingredients.ingredientID = ingredientsinrecipe.ingredientsID " +
+               "INNER JOIN recipes ON ingredientsinrecipe.recipeID = recipes.recipeID "+
+               "WHERE ingredients.ingredientName ='Egg'" )
+    if request_json:
+        for ingName in request_json:
+            dbquery += "OR ingredients.ingredientName = '" + ingName.get("name") +  "'"
+
+    dbquery += "ORDER BY recipes.recipeName"
+    cur.execute(dbquery)
     rows = cur.fetchall()
-    # OR ingredients.ingredientName =" " String which we will add for each item in the json list we receive
     for row in rows:
         ingre = Ingredient(row[0], row[1])
         ingredientList.append(ingre)
@@ -31,7 +35,9 @@ def mysql():
 @app.route("/postjson", methods=['GET', 'POST'])
 def postjson():
     request_json = request.get_json()
-    print(request_json.get('firstName'))
+    for item in request_json:
+        print(item.get("name"))
+
     return "ok"
 
 @app.route("/json")

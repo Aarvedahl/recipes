@@ -12,12 +12,12 @@ con = mdb.connect(host="localhost",user="root",
 @app.route("/mysql", methods=['GET', 'POST'])
 def mysql():
     request_json = request.get_json()
-    ingredientList = []
+    recipeList = []
     cur = con.cursor()
-    dbquery=("SELECT ingredients.ingredientName, recipes.recipeName FROM ingredients " +
+    dbquery=("SELECT recipes.recipeID, recipes.recipeName, recipes.ingNeed, ingredients.ingredientName  FROM ingredients " +
                "INNER JOIN ingredientsinrecipe ON ingredients.ingredientID = ingredientsinrecipe.ingredientsID " +
                "INNER JOIN recipes ON ingredientsinrecipe.recipeID = recipes.recipeID "+
-               "WHERE ingredients.ingredientName ='Egg'" )
+               "WHERE ingredients.ingredientName ='Spaghetti'" )
     if request_json:
         for ingName in request_json:
             dbquery += "OR ingredients.ingredientName = '" + ingName.get("name") +  "'"
@@ -26,9 +26,13 @@ def mysql():
     cur.execute(dbquery)
     rows = cur.fetchall()
     for row in rows:
-        ingre = Ingredient(row[0], row[1])
-        ingredientList.append(ingre)
-    return json.dumps([ing.__dict__ for ing in ingredientList])
+        recipe = Recipe(row[0], row[1], 3, row[2])
+        ingre = Ingredient(row[3])
+        recipeList.append(recipe)
+        recipe.ingredients.append(ingre)
+        #ingredientList.append(ingre)
+        # serialize ingredient object
+    return json.dumps([recipe.__dict__ for recipe in recipeList])
 
 
 #export FLASK_APP=hello.py python -m flask run

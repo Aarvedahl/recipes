@@ -21,6 +21,7 @@ def mysql():
         recipe.ingredients.append(ingre)
 
     #recipeList = sorted(recipeList, key=lambda r: r.recipeID)
+    #flytta upp detta och lägga in recepten direkt i ett dictonary
     recDic = {}
     for i in range(0, len(recipeList)):
         if recipeList[i].recipeID in recDic:

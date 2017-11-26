@@ -14,21 +14,19 @@ con = mdb.connect(host="localhost",user="root",
 def mysql():
     request_json = request.get_json()
     recipeList = []
-    for row in select(request_json):
-        recipe = Recipe(row[0], row[1], 3, row[2])
-        ingre = Ingredient(row[3])
-        recipeList.append(recipe)
-        recipe.ingredients.append(ingre)
-
-    #recipeList = sorted(recipeList, key=lambda r: r.recipeID)
-    #flytta upp detta och lägga in recepten direkt i ett dictonary
     recDic = {}
-    for i in range(0, len(recipeList)):
-        if recipeList[i].recipeID in recDic:
-            recDic[recipeList[i].recipeID].ingredients.append(recipeList[i].ingredients[0])
-        else:
-            recDic[recipeList[i].recipeID] = recipeList[i]
 
+    for row in select(request_json):
+        if row[0] in recDic:
+            ingre = Ingredient(row[3])
+            recDic[row[0]].ingredients.append(ingre)
+        else:
+            recipe = Recipe(row[0], row[1], 3, row[2])
+            ingre = Ingredient(row[3])
+            recipe.ingredients.append(ingre)
+            recDic[row[0]] = recipe
+    recipeList=list(recDic.values())
+    
     for i in reversed(range(len(recipeList))):
         if len(recipeList[i].ingredients) < recipeList[i].ingNeed:
             del recipeList[i]

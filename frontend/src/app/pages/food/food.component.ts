@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { SearchInputComponent } from './searchInput';
 
 @Component({
   selector: 'food',
-  templateUrl: './food.html',
-  styleUrls: ['./food.scss']
+  templateUrl: './food.html'
 })
 
-// Försök att göra om till flera komponenter
 export class FoodComponent {
   constructor() {}
 }

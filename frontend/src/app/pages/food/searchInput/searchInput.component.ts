@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'search-inputs',
+  selector: 'ngt-search-inputs',
   templateUrl: './searchInput.html',
 })
-export class SearchInputs {
+export class SearchInputComponent {
 
   constructor() {
   }

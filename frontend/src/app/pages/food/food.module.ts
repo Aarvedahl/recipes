@@ -1,7 +1,6 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SearchInputs } from './searchInput';
 
 import { FoodComponent } from './food.component';
 import { routing } from './food.routing';
@@ -13,8 +12,7 @@ import { routing } from './food.routing';
     routing
   ],
   declarations: [
-    FoodComponent.
-    SearchInputs
-  ]
+    FoodComponent
+    ]
 })
 export class FoodModule {}

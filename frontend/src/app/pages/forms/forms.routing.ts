@@ -1,4 +1,4 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs/inputs.component';

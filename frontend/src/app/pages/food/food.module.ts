@@ -6,17 +6,22 @@ import { FoodComponent } from './food.component';
 import { routing } from './food.routing';
 import { SearchInputComponent } from './searchInput';
 import { FoodTableComponent } from './foodtable';
+import { DataService } from './data.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    routing
+    routing,
   ],
   declarations: [
     FoodComponent,
     SearchInputComponent,
-    FoodTableComponent
-    ]
+    FoodTableComponent,
+  ],
+  providers: [
+    DataService,
+  ],
+
 })
 export class FoodModule {}

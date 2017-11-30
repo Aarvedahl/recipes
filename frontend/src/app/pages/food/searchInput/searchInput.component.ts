@@ -4,7 +4,6 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'ngt-search-inputs',
   templateUrl: './searchInput.html',
-  providers: [DataService],
 })
 export class SearchInputComponent implements OnInit {
 

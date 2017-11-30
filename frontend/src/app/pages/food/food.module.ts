@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { FoodComponent } from './food.component';
 import { routing } from './food.routing';
 import { SearchInputComponent } from './searchInput';
+import { FoodTableComponent } from './foodtable';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { SearchInputComponent } from './searchInput';
   ],
   declarations: [
     FoodComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    FoodTableComponent
     ]
 })
 export class FoodModule {}

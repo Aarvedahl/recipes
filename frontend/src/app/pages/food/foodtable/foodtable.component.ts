@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'ngt-search-inputs',
-  templateUrl: './searchInput.html',
+  selector: 'ngt-foodtable',
+  templateUrl: './foodtable.html',
   providers: [DataService],
 })
-export class SearchInputComponent implements OnInit {
+export class FoodTableComponent implements OnInit {
 
     message: string;
     constructor(private data: DataService) { }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchInputComponent } from './searchInput';
+import { FoodTableComponent } from './foodtable';
 
 @Component({
   selector: 'food',
@@ -7,5 +8,6 @@ import { SearchInputComponent } from './searchInput';
 })
 
 export class FoodComponent {
+
   constructor() {}
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { SearchItem } from '../searchItem';
 
 @Component({
   selector: 'ngt-search-inputs',
@@ -15,11 +16,15 @@ export class SearchInputComponent implements OnInit {
       this.data.currentMessage.subscribe(message => this.message = message);
     }
 
-// [(ngModel)]= "value"
     onEnter() {
-      console.log(this.value);
+
     }
     // Ta emot det som står i fältet och då skapa ett nytt searchObject med det därefter lägga till det i en lista
+    /*
+    hero: Hero = {
+       name: 'Windstorm'
+     };
+    */
     newMessage() {
       this.data.changeMessage('Hello from Sibling');
     }

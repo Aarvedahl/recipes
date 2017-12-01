@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { SearchItem } from '../searchItem';
 
 @Component({
   selector: 'ngt-foodtable',

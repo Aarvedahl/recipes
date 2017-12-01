@@ -1,6 +1,6 @@
 <div class="input-group">
   <input type="text" class="form-control with-danger-addon" placeholder="Search for..." [(ngModel)]= "value" (keyup.enter)="onEnter()">
   <span class="input-group-btn">
-      <button class="btn btn-danger" type="button"(click)="newMessage()">Go! {{ message }}</button>
+      <button class="btn btn-danger" type="button"(click)="onEnter()">Go! {{ message }}</button>
   </span>
 </div>

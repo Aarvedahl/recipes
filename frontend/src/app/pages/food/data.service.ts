@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { SearchItem } from './searchItem';
 
 @Injectable()
 
@@ -14,6 +15,6 @@ export class DataService {
     this.messageSource.next(message);
   }
 
-  
+
 
 }

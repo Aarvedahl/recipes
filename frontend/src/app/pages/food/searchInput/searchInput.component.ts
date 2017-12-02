@@ -9,6 +9,8 @@ import { SearchItem } from '../searchItem';
 export class SearchInputComponent implements OnInit {
     value = '';
     message: string;
+    list = [];
+    model: SearchItem;
 
     constructor(private data: DataService) { }
 
@@ -17,14 +19,11 @@ export class SearchInputComponent implements OnInit {
     }
 
     onEnter() {
-
+      this.model = new SearchItem(this.value);
+      this.list.push(this.model);
+      console.log(this.list);
     }
-    // Ta emot det som står i fältet och då skapa ett nytt searchObject med det därefter lägga till det i en lista
-    /*
-    hero: Hero = {
-       name: 'Windstorm'
-     };
-    */
+
     newMessage() {
       this.data.changeMessage('Hello from Sibling');
     }

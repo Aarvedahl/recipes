@@ -2,9 +2,11 @@ from flask import Flask, jsonify, json, request
 import MySQLdb as mdb
 from models import Ingredient, Recipe
 import jsonpickle
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 # MySQL configurations
 con = mdb.connect(host="localhost",user="root",

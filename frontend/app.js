@@ -14,23 +14,35 @@ angular.module('food', [])
 */
     $scope.create = function(search) {
       ingredients = [];
-      ingredients.push(search);
+      searches = search.name.split(", ");
+
+      for (var word of searches) {
+        let ingredient = {
+          name: ""
+        };
+        ingredient.name = word;
+        ingredients.push(ingredient);
+      }
+
       console.log(ingredients);
-      /*$http({
-        url: 'http://127.0.0.1:5000/mysql',
-        method: "POST",
-        data: album,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(function(response) {
-          // success
-        },
-        function(response) {
-          // failed
-          console.error(response);
-        }); */
+
+      // a, s, v, b, a
+      $http({
+          url: 'http://127.0.0.1:5000/mysql',
+          method: "POST",
+          data: ingredients,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(function(response) {
+            // success
+            console.log(response.data);
+          },
+          function(response) {
+            // failed
+            console.error(response);
+          });
     };
 
   });

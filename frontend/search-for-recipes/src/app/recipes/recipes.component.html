@@ -6,10 +6,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedRecipe">
-
-  <h2>{{ selectedRecipe.name | uppercase }} Details</h2>
-  <div><span>ID: </span>{{selectedRecipe.recipeID}}</div>
-  <div><span>Rating: </span>{{selectedRecipe.rating}}</div>
-  <div><span>Needed Ingredients: </span>{{selectedRecipe.ingNeed}}</div>
-</div>
+<app-recipe-detail [recipe]="selectedRecipe"></app-recipe-detail>

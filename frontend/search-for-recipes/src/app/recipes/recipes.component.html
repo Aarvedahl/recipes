@@ -1,6 +1,15 @@
-<h2>{{ recipe.recipeName | uppercase }} Details </h2>
+<h2>My Recipes</h2>
 
-<div><span>id: </span>{{recipe.recipeID}}</div>
-<div><span>name: </span>{{recipe.recipeName}}</div>
-<div><span>rating: </span>{{recipe.rating}}</div>
-<div><span>Ing Needed: </span>{{recipe.ingNeed}}</div>
+<ul class="heroes">
+  <li *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+    <span class="badge">{{ recipe.rating }}</span> {{ recipe.recipeName }}
+  </li>
+</ul>
+
+<div *ngIf="selectedRecipe">
+
+  <h2>{{ selectedRecipe.name | uppercase }} Details</h2>
+  <div><span>ID: </span>{{selectedRecipe.recipeID}}</div>
+  <div><span>Rating: </span>{{selectedRecipe.rating}}</div>
+  <div><span>Needed Ingredients: </span>{{selectedRecipe.ingNeed}}</div>
+</div>

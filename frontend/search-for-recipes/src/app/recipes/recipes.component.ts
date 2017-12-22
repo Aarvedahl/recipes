@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe';
 import { RECIPES }  from '../mock-recipes';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipes',
@@ -9,7 +10,7 @@ import { RECIPES }  from '../mock-recipes';
 })
 export class RecipesComponent implements OnInit {
 
-  recipes = RECIPES;
+  recipes: Recipe[];
   selectedRecipe: Recipe;
 
   recipe: Recipe = {
@@ -21,9 +22,15 @@ export class RecipesComponent implements OnInit {
 
   // TODO Lägg till genre på recipes om man t.ex bara vill ha indisk mat
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.getRecipes();
+  }
+
+  getRecipes(): void {
+    this.recipeService.getRecipes()
+        .subscribe(recipes => this.recipes = recipes);
   }
 
   onSelect(recipe: Recipe): void {

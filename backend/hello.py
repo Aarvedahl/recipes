@@ -40,7 +40,7 @@ def select(requestparam):
     dbquery=("SELECT recipes.recipeID, recipes.recipeName, recipes.ingNeed, ingredients.ingredientName  FROM ingredients " +
                "INNER JOIN ingredientsinrecipe ON ingredients.ingredientID = ingredientsinrecipe.ingredientsID " +
                "INNER JOIN recipes ON ingredientsinrecipe.recipeID = recipes.recipeID "+
-               "WHERE ingredients.ingredientName =''" )
+               "WHERE ingredients.ingredientName ='Spaghetti' OR ingredients.ingredientName = 'Meatballs'" )
     if requestparam:
         for ingName in requestparam:
             dbquery += "OR ingredients.ingredientName = '" + ingName.get("name") +  "'"

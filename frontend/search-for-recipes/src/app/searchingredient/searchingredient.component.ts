@@ -18,15 +18,12 @@ export class SearchingredientComponent implements OnInit {
   }
 
   findRecipes() {
-    let ingredients = [];
+    let ingredients: Search[] = [];
     let searches = this.search.name.split(", ");
 
     for (var word of searches) {
-      let ingredient = {
-        name: ""
-      };
-      ingredient.name = word;
-      ingredients.push(ingredient);
+      let search = new Search(word);
+      ingredients.push(search);
     }
     console.log(ingredients);
   }

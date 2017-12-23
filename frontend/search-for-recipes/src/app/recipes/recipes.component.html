@@ -1,5 +1,4 @@
-<h2>My Recipes</h2>
-
+<h2>My Recipes</h2> {{ ingredients }}
 <ul class="heroes">
   <li *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
     <span class="badge">{{ recipe.rating }}</span> {{ recipe.recipeName }}

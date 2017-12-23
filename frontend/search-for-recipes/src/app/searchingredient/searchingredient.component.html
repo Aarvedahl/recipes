@@ -1,6 +1,5 @@
 <div (keydown.enter)="findRecipes()">
-  <label>name:
-      <input [(ngModel)]="search.name" placeholder="name">
-  </label>
+  <h3>Search for recipes with the following ingredients</h3>
+  <input [(ngModel)]="search.name" placeholder="Ingredients">
   <button (click)="findRecipes()">Search</button>
 </div>

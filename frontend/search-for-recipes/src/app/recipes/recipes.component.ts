@@ -12,6 +12,7 @@ export class RecipesComponent implements OnInit {
 
   recipes: Recipe[];
   selectedRecipe: Recipe;
+  ingredients:string;
 
   recipe: Recipe = {
     recipeID: 1,
@@ -26,6 +27,8 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit() {
     this.getRecipes();
+    this.recipeService.currentIngredients.subscribe(ingredients => this.ingredients = ingredients)
+
   }
 
   getRecipes(): void {

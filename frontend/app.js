@@ -1,17 +1,6 @@
 angular.module('food', [])
   .controller('foodSearch', function($scope, $http) {
 
-
-    /*
-    [
-    	{
-        	"name": "Chicken"
-    	},
-        {
-        	"name": "Spaghetti"
-        }
-    ]
-*/
     $scope.create = function(search) {
       ingredients = [];
       searches = search.name.split(", ");
@@ -23,10 +12,6 @@ angular.module('food', [])
         ingredient.name = word;
         ingredients.push(ingredient);
       }
-
-      console.log(ingredients);
-
-      // a, s, v, b, a
       $http({
           url: 'http://127.0.0.1:5000/mysql',
           method: "POST",
@@ -37,12 +22,25 @@ angular.module('food', [])
         })
         .then(function(response) {
             // success
+            $scope.recipes = response.data;
             console.log(response.data);
           },
           function(response) {
-            // failed
+            // failed         $scope.myWelcome = response.statusText;
             console.error(response);
           });
     };
 
   });
+
+
+/*
+      [
+      	{
+          	"name": "Chicken"
+      	},
+          {
+          	"name": "Spaghetti"
+          }
+      ]
+  */

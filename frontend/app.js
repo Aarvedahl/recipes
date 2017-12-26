@@ -23,17 +23,15 @@ angular.module('food', [])
         .then(function(response) {
             // success
             $scope.recipes = response.data;
-            console.log(response.data);
           },
           function(response) {
-            // failed         $scope.myWelcome = response.statusText;
-            console.error(response);
+            // failed
+            $scope.errormessage = response.statusText;
           });
     };
 
     $scope.onSelect = function(recipe) {
       $scope.recipe = recipe;
     }
-    //TODO Show error message
     //TODO CSS the list
   });

@@ -39,10 +39,16 @@
       </div>
       <div class="col-12">
         <ul class="heroes">
-          <li ng-repeat="recipe in recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+          <li ng-repeat="recipe in recipes" [class.selected]="recipe === selectedRecipe" ng-click="onSelect(recipe)">
             <span class="badge">{{ recipe.rating }}</span> {{ recipe.recipeName }}
           </li>
         </ul>
+      </div>
+      <div ng-if="recipe">
+        <h2>{{ recipe.recipeName | uppercase }} Details</h2>
+        <div><span>ID: </span>{{recipe.recipeID}}</div>
+        <div><span>Rating: </span>{{recipe.rating}}</div>
+        <div><span>Needed Ingredients: </span>{{recipe.ingNeed}}</div>
       </div>
     </div>
 </body>

@@ -31,16 +31,9 @@ angular.module('food', [])
           });
     };
 
+    $scope.onSelect = function(recipe) {
+      $scope.recipe = recipe;
+    }
+    //TODO Show error message
+    //TODO CSS the list
   });
-
-
-/*
-      [
-      	{
-          	"name": "Chicken"
-      	},
-          {
-          	"name": "Spaghetti"
-          }
-      ]
-  */

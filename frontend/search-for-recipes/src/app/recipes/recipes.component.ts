@@ -13,6 +13,7 @@ export class RecipesComponent implements OnInit {
   recipes: Recipe[];
   selectedRecipe: Recipe;
   ingredients:string;
+  inputField: string;
 
   recipe: Recipe = {
     recipeID: 1,
@@ -26,18 +27,23 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.recipeService.currentIngredients.subscribe(ingredients => this.ingredients = ingredients);
     this.getRecipes();
-    this.recipeService.currentIngredients.subscribe(ingredients => this.ingredients = ingredients)
-
   }
 
   getRecipes(): void {
-    this.recipeService.getRecipes()
-        .subscribe(recipes => this.recipes = recipes);
+    this.recipeService.getRecipesByIngredients(this.ingredients)
+        .subscribe(data => console.log(data));
+      //  .subscribe(recipes => this.recipes = recipes);
   }
 
   onSelect(recipe: Recipe): void {
     this.selectedRecipe = recipe;
+  }
+
+  newIngredients() {
+    console.log(this.inputField);
+    this.recipeService.changeIngredients(this.inputField);
   }
 
 }

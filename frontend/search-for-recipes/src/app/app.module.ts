@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
-import { SearchingredientComponent } from './searchingredient/searchingredient.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeService } from './recipe.service';
 
@@ -13,7 +12,6 @@ import { RecipeService } from './recipe.service';
   declarations: [
     AppComponent,
     RecipesComponent,
-    SearchingredientComponent,
     RecipeDetailComponent
   ],
   imports: [

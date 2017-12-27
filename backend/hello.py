@@ -1,4 +1,3 @@
-import sys
 from flask import Flask, jsonify, json, request
 import MySQLdb as mdb
 from models import Ingredient, Recipe
@@ -17,8 +16,6 @@ con = mdb.connect(host="localhost",user="root",
 def mysql():
     request_json = request.get_json()
     recipeList = []
-
-    print('This standard output', file=sys.stdout)
 
     for row in select(request_json):
         recipe = Recipe(row[0], row[1], 3, row[2])

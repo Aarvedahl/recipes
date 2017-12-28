@@ -19,8 +19,7 @@ def mysql():
 
     for row in select(request_json):
         recipe = Recipe(row[0], row[1], row[2], row[3], row[4], row[5])
-        print(row)
-        ingre = Ingredient(row[5])
+        ingre = Ingredient(row[6])
         recipeList.append(recipe)
         recipe.ingredients.append(ingre)
 
@@ -31,9 +30,9 @@ def mysql():
         else:
             recDic[recipeList[i].recipeID] = recipeList[i]
 
-    #for i in reversed(range(len(recipeList))):
-        #if len(recipeList[i].ingredients) < recipeList[i].ingNeed:
-        #    del recipeList[i]
+    for i in reversed(range(len(recipeList))):
+        if len(recipeList[i].ingredients) < recipeList[i].ingNeed:
+            del recipeList[i]
     return jsonpickle.encode(recipeList)
 
 def select(requestparam):

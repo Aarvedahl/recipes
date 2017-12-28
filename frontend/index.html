@@ -41,7 +41,11 @@
       <div class="col-12">
         <ul class="heroes">
           <li ng-repeat="recipe in recipes" [class.selected]="recipe === selectedRecipe" ng-click="onSelect(recipe)">
-            <span class="badge">{{ recipe.rating }}</span> {{ recipe.recipeName }}
+            <img class="recipeImage" ng-src="{{recipe.recipeimage}}" />
+            <h3>{{ recipe.recipeName }}</h3>
+            <span class="badge">{{ recipe.rating }}</span>
+            <p>{{ recipe.description }}</p>
+            <button type="button" class="btn btn-info">Info</button>
           </li>
         </ul>
       </div>

@@ -2,7 +2,13 @@
   padding-top: 70px;
 }
 
-/* HeroesComponent's private CSS styles 
+.recipeImage {
+  padding-top: 20px;
+  width: 300px;
+  height: 230px;
+}
+
+/* HeroesComponent's private CSS styles
 .selected {
   background-color: #CFD8DC !important;
   color: white;

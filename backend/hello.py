@@ -18,11 +18,11 @@ def mysql():
     recipeList = []
 
     for row in select(request_json):
-        recipe = Recipe(row[0], row[1], 3, row[2])
-        ingre = Ingredient(row[3])
+        recipe = Recipe(row[0], row[1], row[2], row[3], row[4], row[5])
+        print(row)
+        ingre = Ingredient(row[5])
         recipeList.append(recipe)
         recipe.ingredients.append(ingre)
-
 
     recDic = {}
     for i in range(0, len(recipeList)):
@@ -31,14 +31,14 @@ def mysql():
         else:
             recDic[recipeList[i].recipeID] = recipeList[i]
 
-    for i in reversed(range(len(recipeList))):
-        if len(recipeList[i].ingredients) < recipeList[i].ingNeed:
-            del recipeList[i]
+    #for i in reversed(range(len(recipeList))):
+        #if len(recipeList[i].ingredients) < recipeList[i].ingNeed:
+        #    del recipeList[i]
     return jsonpickle.encode(recipeList)
 
 def select(requestparam):
     cur = con.cursor()
-    dbquery=("SELECT recipes.recipeID, recipes.recipeName, recipes.ingNeed, ingredients.ingredientName  FROM ingredients " +
+    dbquery=("SELECT recipes.recipeID, recipes.recipeName, recipes.rating, recipes.recipeimage, recipes.description, recipes.ingNeed, ingredients.ingredientName  FROM ingredients " +
                "INNER JOIN ingredientsinrecipe ON ingredients.ingredientID = ingredientsinrecipe.ingredientsID " +
                "INNER JOIN recipes ON ingredientsinrecipe.recipeID = recipes.recipeID "+
                "WHERE ingredients.ingredientName =''" )

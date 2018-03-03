@@ -1,5 +1,6 @@
 angular.module('food', [])
   .controller('foodSearch', function($scope, $http) {
+    $scope.wildcard = false;
 
     $scope.create = function(search) {
       ingredients = [];
@@ -12,7 +13,11 @@ angular.module('food', [])
         ingredient.name = word;
         ingredients.push(ingredient);
       }
-      $http({
+      content = {};
+      content.ingredients = ingredients;
+      content.wildcard = $scope.wildcard;
+      console.log(content);
+    /*  $http({
           url: 'http://127.0.0.1:5000/mysql',
           method: "POST",
           data: ingredients,
@@ -27,7 +32,7 @@ angular.module('food', [])
           function(response) {
             // failed
             $scope.errormessage = response.statusText;
-          });
+          }); */
     };
 
     $scope.onSelect = function(recipe) {

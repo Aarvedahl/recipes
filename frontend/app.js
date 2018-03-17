@@ -17,10 +17,10 @@ angular.module('food', [])
       content.ingredients = ingredients;
       content.wildcard = $scope.wildcard;
       console.log(content);
-    /*  $http({
+      $http({
           url: 'http://127.0.0.1:5000/mysql',
           method: "POST",
-          data: ingredients,
+          data: content,
           headers: {
             'Content-Type': 'application/json'
           }
@@ -32,7 +32,7 @@ angular.module('food', [])
           function(response) {
             // failed
             $scope.errormessage = response.statusText;
-          }); */
+          });
     };
 
     $scope.onSelect = function(recipe) {

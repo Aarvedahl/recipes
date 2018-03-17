@@ -4,7 +4,6 @@ from models import Ingredient, Recipe
 import jsonpickle
 from flask_cors import CORS
 
-
 app = Flask(__name__)
 CORS(app)
 
@@ -17,7 +16,9 @@ def mysql():
     request_json = request.get_json()
     recipeList = []
 
-    for row in select(request_json):
+    wildcard = request_json['wildcard']
+
+    for row in select(request_json['ingredients']):
         recipe = Recipe(row[0], row[1], row[2], row[3], row[4], row[5])
         ingre = Ingredient(row[6])
         recipeList.append(recipe)
@@ -30,10 +31,7 @@ def mysql():
         else:
             recDic[recipeList[i].recipeID] = recipeList[i]
 
-    for i in reversed(range(len(recipeList))):
-        if len(recipeList[i].ingredients) < recipeList[i].ingNeed:
-            del recipeList[i]
-    return jsonpickle.encode(recipeList)
+    return jsonpickle.encode(delUneccessary(recipeList, wildcard))
 
 def select(requestparam):
     cur = con.cursor()
@@ -48,5 +46,18 @@ def select(requestparam):
     dbquery += "ORDER BY recipes.recipeID"
     cur.execute(dbquery)
     return cur.fetchall()
+
+def delUneccessary(recipeList, wildcard):
+    if wildcard:
+        for i in reversed(range(len(recipeList))):
+            if len(recipeList[i].ingredients) < recipeList[i].ingNeed - 1:
+                del recipeList[i]
+    else:
+        for i in reversed(range(len(recipeList))):
+            if len(recipeList[i].ingredients) < recipeList[i].ingNeed:
+                del recipeList[i]
+
+    return recipeList
+
 
 #export FLASK_APP=hello.py python -m flask run

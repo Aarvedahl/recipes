@@ -12,6 +12,8 @@ CORS(app)
  #                 passwd="password",db="food")
 
 
+# Kolla efter docker + mysql image
+# Undersök också
 @app.route("/")
 def hello():
     return "Hello World from Flask"

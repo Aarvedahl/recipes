@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c572028-ebc8-438b-9923-a682c7d7f57b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Dockerfile" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/backend/hello.py" afterPath="$PROJECT_DIR$/app/main.py" />
-      <change beforePath="$PROJECT_DIR$/backend/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" afterPath="$PROJECT_DIR$/app/requirements.txt" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change beforePath="$PROJECT_DIR$/app/Dockerfile" afterPath="$PROJECT_DIR$/app/Dockerfile" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" afterPath="$PROJECT_DIR$/app/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,34 +14,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state relative-caret-position="255">
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
-                <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+                <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="153">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -107,10 +92,10 @@
         <option value="$PROJECT_DIR$/app/api.py" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/product/Dockerfile" />
-        <option value="$PROJECT_DIR$/app/Dockerfile" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/app/requirements.txt" />
         <option value="$PROJECT_DIR$/app/main.py" />
+        <option value="$PROJECT_DIR$/app/Dockerfile" />
       </list>
     </option>
   </component>
@@ -327,12 +312,12 @@
       <workItem from="1521142102281" duration="1339000" />
       <workItem from="1521276251955" duration="3180000" />
       <workItem from="1521279513938" duration="1267000" />
-      <workItem from="1521281281367" duration="711000" />
+      <workItem from="1521281281367" duration="971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8437000" />
+    <option name="totallyTimeSpent" value="8697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
@@ -385,7 +370,7 @@
           <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="34" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-            <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+            <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
           </folding>
         </state>
       </provider>
@@ -436,7 +421,7 @@
           <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="47" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-            <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+            <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
           </folding>
         </state>
       </provider>
@@ -479,7 +464,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-            <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+            <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
           </folding>
         </state>
       </provider>
@@ -498,7 +483,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-            <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+            <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
           </folding>
         </state>
       </provider>
@@ -509,7 +494,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-            <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+            <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
           </folding>
         </state>
       </provider>
@@ -520,7 +505,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-            <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+            <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
           </folding>
         </state>
       </provider>
@@ -558,14 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -584,12 +561,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="255">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-            <marker date="1521281992944" expanded="true" signature="1172:1597" ph="SELECT recip... ingredients" />
+            <marker date="1521282162712" expanded="true" signature="1224:1649" ph="SELECT recip... ingredients" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

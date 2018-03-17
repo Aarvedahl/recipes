@@ -2,8 +2,8 @@ version: '3'
 
 services:
   food-service:
-    build: ./backend
+    build: ./app
     volumes:
-      - ./backend:/usr/src/app
+      - ./app:/usr/src/app
     ports:
-      - 5000::5000
+      - 5001:80

@@ -1,3 +1,4 @@
 FROM python:3-onbuild
 COPY . /usr/src/app
-CMD ["python", "hello.py"]
+
+CMD ["python", "main.py"]

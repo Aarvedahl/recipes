@@ -8,9 +8,15 @@ app = Flask(__name__)
 CORS(app)
 
 # MySQL configurations
-con = mdb.connect(host="localhost",user="root",
-                  passwd="password",db="food")
+#con = mdb.connect(host="localhost",user="root",
+ #                 passwd="password",db="food")
 
+
+@app.route("/")
+def hello():
+    return "Hello World from Flask"
+
+'''
 @app.route("/mysql", methods=['GET', 'POST'])
 def mysql():
     request_json = request.get_json()
@@ -58,6 +64,10 @@ def delUneccessary(recipeList, wildcard):
                 del recipeList[i]
 
     return recipeList
+'''
 
+if __name__ == "__main__":
+    # Only for debugging while developing
+    app.run(host='0.0.0.0', debug=True, port=80)
 
-#export FLASK_APP=hello.py python -m flask run
+#export FLASK_APP=main.py python -m flask run

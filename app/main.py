@@ -8,17 +8,15 @@ app = Flask(__name__)
 CORS(app)
 
 # MySQL configurations
-#con = mdb.connect(host="localhost",user="root",
- #                 passwd="password",db="food")
+con = mdb.connect(host="db", db="food", passwd="devexample", user="dev")
 
 
 # Kolla efter docker + mysql image
-# Undersök också
 @app.route("/")
 def hello():
     return "Hello World from Flask"
 
-'''
+
 @app.route("/mysql", methods=['GET', 'POST'])
 def mysql():
     request_json = request.get_json()
@@ -66,7 +64,7 @@ def delUneccessary(recipeList, wildcard):
                 del recipeList[i]
 
     return recipeList
-'''
+
 
 if __name__ == "__main__":
     # Only for debugging while developing

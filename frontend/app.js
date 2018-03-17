@@ -18,7 +18,7 @@ angular.module('food', [])
       content.wildcard = $scope.wildcard;
       console.log(content);
       $http({
-          url: 'http://127.0.0.1:5000/mysql',
+          url: 'http://192.168.99.100:5001/mysql',
           method: "POST",
           data: content,
           headers: {

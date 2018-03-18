@@ -50,7 +50,7 @@
           <button type="button" class="btn btn-info recipeButton">Info</button>
         </div>
       </div>
-      <div ng-if="recipe">
+      <div class="recipeInfo" ng-if="recipe">
         <h2>{{ recipe.recipeName | uppercase }} Details</h2>
         <div><span>ID: </span>{{recipe.recipeID}}</div>
         <div><span>Rating: </span>{{recipe.rating}}</div>

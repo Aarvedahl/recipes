@@ -36,7 +36,11 @@ angular.module('food', [])
     };
 
     $scope.onSelect = function(recipe) {
-      $scope.recipe = recipe;
+        if($scope.recipe == recipe) {
+            $scope.recipe = null;
+        } else {
+            $scope.recipe = recipe;
+        }
     }
-    //TODO CSS the list
+   
   });

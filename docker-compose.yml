@@ -1,20 +1,21 @@
 version: '3'
 
 services:
-  db:
-      build: ./db
-      restart: always
-      environment:
-          MYSQL_ROOT_PASSWORD: example
-          MYSQL_USER: dev
-          MYSQL_PASSWORD: devexample
-          MYSQL_DATABASE: food
+    food-service:
+          build: ./app
+          volumes:
+            - ./app:/usr/src/app
+          ports:
+            - 5001:80
+          depends_on:
+            - db
+    db:
+        build: ./db
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: example
+            MYSQL_USER: dev
+            MYSQL_PASSWORD: devexample
+            MYSQL_DATABASE: food
 
-
-  food-service:
-      build: ./app
-      volumes:
-        - ./app:/usr/src/app
-      ports:
-        - 5001:80
 

@@ -65,6 +65,17 @@ def delUneccessary(recipeList, wildcard):
 
     return recipeList
 
+def getFavorites():
+    cur = con.cursor()
+    dbquery=("SELECT recipes.recipeID, recipes.recipeName, recipes.rating, recipes.recipeimage, recipes.description, recipes.ingNeed, ingredients.ingredientName  FROM ingredients " +
+             "INNER JOIN ingredientsinrecipe ON ingredients.ingredientID = ingredientsinrecipe.ingredientsID " +
+             "INNER JOIN recipes ON ingredientsinrecipe.recipeID = recipes.recipeID ")
+
+    #dbquery += "ORDER BY recipes.recipeID" order by recipe popularity, highest rating or most views?
+    cur.execute(dbquery)
+    return cur.fetchall()
+
+
 
 if __name__ == "__main__":
     # Only for debugging while developing

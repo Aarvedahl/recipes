@@ -42,5 +42,5 @@ angular.module('food', [])
             $scope.recipe = recipe;
         }
     }
-   
+
   });

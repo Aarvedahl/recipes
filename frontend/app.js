@@ -1,11 +1,12 @@
+// Detecta A,A inget mellanslag efter kommatecknet och justera det automatiskt
 angular.module('food', [])
   .controller('foodSearch', function($scope, $http) {
     $scope.wildcard = false;
 
     $scope.create = function(search) {
       ingredients = [];
-      searches = search.name.split(", ");
-
+      //searches = search.name.split(", ");
+        searches = getString(search.name);
       for (var word of searches) {
         let ingredient = {
           name: ""
@@ -16,7 +17,6 @@ angular.module('food', [])
       content = {};
       content.ingredients = ingredients;
       content.wildcard = $scope.wildcard;
-      console.log(content);
       $http({
           url: 'http://192.168.99.100:5001/mysql',
           method: "POST",
@@ -41,6 +41,19 @@ angular.module('food', [])
         } else {
             $scope.recipe = recipe;
         }
-    }
+    };
+
+    function getString(text) {
+        var newString = "";
+        for(var i=0; i<text.length; i++) {
+            if(text.charAt(i) == "," && text.charAt(i+1) != " ") {
+                newString += text.charAt(i) + " ";
+            } else {
+                newString += text.charAt(i);
+            }
+        }
+        return newString.split(", ");
+
+    };
 
   });
